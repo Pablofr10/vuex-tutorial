@@ -3,7 +3,6 @@
     <ul>
       <li><router-link to="/">Home</router-link></li>
       <li><router-link to="/favoritos">Favoritos</router-link></li>
-      <li><router-link to="/login">Login</router-link></li>
     </ul>
     <div class="favorito">
       <img src="@/assets/heart.svg" alt="favoritos" />
