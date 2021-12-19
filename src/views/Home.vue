@@ -1,5 +1,7 @@
 <template>
+<keep-alive>
   <ListaUsuario />
+</keep-alive>
 </template>
 
 <script>

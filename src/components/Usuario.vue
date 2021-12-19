@@ -5,7 +5,7 @@
     </div>
     <span>{{ usuario.first_name + " " + usuario.last_name }}</span>
     <a class="favorito" @click="mudarFavorito(usuario.id)">
-      <img v-if="favorito" src="@/assets/heart.svg" alt="favorito icone" />
+      <img v-if="isFavorito(usuario.id)" src="@/assets/heart.svg" alt="favorito icone" />
       <img v-else src="@/assets/heart-outline.svg" alt="favorito icone" />
     </a>
   </div>
@@ -13,10 +13,15 @@
 
 <script>
 import { ref } from "vue";
+import { useStore } from 'vuex';
+
 export default {
   props: ["usuario"],
-  emits: ["selecionado, removeSelecionado"],
+  emits: ["selecionado", "removeSelecionado"],
   setup(prop, { emit }) {
+
+    const store = useStore();
+
     const favorito = ref(false);
 
     function mudarFavorito(idUsuario) {
@@ -30,7 +35,12 @@ export default {
       emit("removeSelecionado", idUsuario);
     }
 
-    return { mudarFavorito, favorito };
+    
+    function isFavorito(idUsuario){
+      return store.getters['usuario/favoritoSelecionado'](idUsuario);
+    }
+
+    return { mudarFavorito, favorito, isFavorito };
   },
 };
 </script>

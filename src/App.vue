@@ -1,6 +1,5 @@
 <template>
   <NavBar />
-  <toastr :toastr="toastr" />
   <router-view />
 </template>
 
