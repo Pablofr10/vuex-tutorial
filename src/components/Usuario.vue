@@ -15,7 +15,7 @@
 import { ref } from "vue";
 export default {
   props: ["usuario"],
-  emits: ["selecionado, removeSelecionado"],
+  emits: ["selecionado", "removeSelecionado"],
   setup(prop, { emit }) {
     const favorito = ref(false);
 
