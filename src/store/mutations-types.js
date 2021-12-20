@@ -1,0 +1,5 @@
+export const pessoas = {
+    ADD_FAVORITO: 'ADD_FAVORITO',
+    REMOVER_FAVORITO: 'REMOVER_FAVORITO',
+    ADD_PESSOAS: 'ADD_PESSOAS'
+}
